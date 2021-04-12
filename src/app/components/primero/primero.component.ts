@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./primero.component.css']
 })
 export class PrimeroComponent implements OnInit {
-  @Input() name = 'Wijan';
+  name = 'Wijan';
   constructor() {
     setTimeout(() => this.name = 'Hola', 5000);
    }

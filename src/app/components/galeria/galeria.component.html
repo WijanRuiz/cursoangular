@@ -1,0 +1,18 @@
+<div>
+  <img [src]="imagenes[indice]" [width]="widthPrincipal">
+</div>
+<div>
+  <button (click)="modificarIndice(-1)">Anterior</button>
+  <button (click)="modificarIndice(1)">Siguiente</button>
+  <button (click)="modificarWidth(true)">Ampliar</button>
+  <button (click)="modificarWidth(false)">Reducir</button>
+  <button (click)="togglePlay()" >{{isPlaying ? 'Stop' : 'Play'}}</button>
+</div>
+<div>
+
+</div>
+<div>
+  <button>Anterior</button>
+  <img [class.seleccionada]="indice === i" *ngFor="let imagen of imagenes; let i = index" [src]="imagen" width="80" (click)="seleccionarImagen(i)"/>
+  <button>Siguiente</button>
+</div>

@@ -8,6 +8,12 @@ import { PrimeroComponent } from './components/primero/primero.component';
 import { SegundoComponent } from './components/segundo/segundo.component';
 import { TerceroComponent } from './tercero/tercero.component';
 import { CuartoComponent } from './components/cuarto/cuarto.component';
+import { HighlightDirective } from './directives/highlight.directive';
+import { RotateDirective } from './directives/rotate.directive';
+import { UsersComponent } from './components/users/users.component';
+import { MinAgePipe } from './pipes/min-age.pipe';
+import { GaleriaComponent } from './components/galeria/galeria.component';
+import { CrudBasicoComponent } from './components/crud-basico/crud-basico.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +21,13 @@ import { CuartoComponent } from './components/cuarto/cuarto.component';
     PrimeroComponent,
     SegundoComponent,
     TerceroComponent,
-    CuartoComponent
+    CuartoComponent,
+    HighlightDirective,
+    RotateDirective,
+    UsersComponent,
+    MinAgePipe,
+    GaleriaComponent,
+    CrudBasicoComponent
   ],
   imports: [
     BrowserModule,
