@@ -1,0 +1,45 @@
+<div class="form-inline">
+  <div class="form-group">
+    <label class="sr-only" for="name">Name</label>
+    <input [(ngModel)]="userForm.name" id="name" type="text" class="form-control mb-2 mr-sm-2" placeholder="John Doe">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" [for]="userForm.email">Email</label>
+    <input [(ngModel)]="userForm.email" type="text" class="form-control mb-2 mr-sm-2" placeholder="example@example.com">
+  </div>
+  <div class="form-group">
+    <label class="sr-only" [for]="userForm.phone">Phone</label>
+    <input [(ngModel)]="userForm.phone" type="text" class="form-control mb-2 mr-sm-2" placeholder="+34 972 25 04 81">
+  </div>
+  <div class="form-group">
+    <button (click)="addUser()" class="btn btn-success"><i class="fas fa-plus-circle"></i></button>
+  </div>
+</div>
+<div class="offset-lg-1 col-lg-10 mt-5">
+  <div class="form-group">
+    <input (change)="setUsersFiltered()" type="checkbox" [(ngModel)]="phone" id="phoneOnly">
+    <label class="ml-2" for="phoneOnly">Hide users without phone</label>
+  </div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="user" [class.seleccionado]="user === userSelected" (click)="selectUser(user)" *ngFor="let user of usersFiltered">
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td><button class="btn btn-danger" (click)="eliminarUsuario(user)"><i class="fas fa-trash-alt"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div>
+    <pre>{{userSelected | json}}</pre>
+  </div>
+</div>
+
